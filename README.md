@@ -1,4 +1,4 @@
-# React Training - Salalem
+# React Training
 This project is a React Tutorial for [Salalem](http://www.salalem.com) new employees. It explores the topics listed below:
 
 - Introduction to ReactJS
