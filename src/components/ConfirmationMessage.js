@@ -11,9 +11,10 @@ class ConfirmationMessage extends Component {
   render() {
     return (
       <dialog open={this.props.open}>
-        Title: <br/> {this.props.title} <br/>
-        Definition: <br/> {this.props.definition} <br/>
-        <input type="submit" value="Confirm"/>
+        Title: <p>{this.props.title}</p>
+        Definition: <p>{this.props.definition}</p>
+        <br/>
+        <input type="button" value="Confirm" onClick={this.props.onConfirm}/>
       </dialog>
     );
   }
@@ -22,7 +23,8 @@ class ConfirmationMessage extends Component {
 ConfirmationMessage.propTypes = {
   title: PropTypes.string,
   definition: PropTypes.string,
-  open: PropTypes.bool
+  open: PropTypes.bool,
+  onConfirm: PropTypes.func
 };
 
 export default ConfirmationMessage;

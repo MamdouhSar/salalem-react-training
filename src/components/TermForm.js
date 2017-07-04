@@ -1,7 +1,7 @@
 /**
  * Created by mamdouh on 03/07/17.
  */
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 class TermForm extends Component {
   constructor() {
@@ -26,11 +26,10 @@ class TermForm extends Component {
 
   _onSubmit() {
     this.setState({isSubmitted: true});
+    this.props.onSubmit(this.state.title, this.state.definition);
   };
 
   render() {
-    console.log(this.state.title);
-    console.log(this.state.definition);
     return (
       <form>
         Term Title<br/>
@@ -39,10 +38,14 @@ class TermForm extends Component {
         Term Definition<br/>
         <textarea rows={10} value={this.state.definition} onChange={this._onDefinitionChange}/>
         <br/><br/>
-        <input type="submit" value="Submit" onChange={this._onSubmit}/>
+        <input type="button" value="Submit" onClick={this._onSubmit}/>
       </form>
     );
   }
 }
+
+TermForm.propTypes = {
+  onSubmit: PropTypes.func
+};
 
 export default TermForm;
