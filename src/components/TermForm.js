@@ -13,6 +13,7 @@ class TermForm extends Component {
     };
     this._onTitleChange = this._onTitleChange.bind(this);
     this._onDefinitionChange = this._onDefinitionChange.bind(this);
+    this._onSubmit = this._onSubmit.bind(this);
   }
 
   _onTitleChange(event) {
@@ -23,7 +24,13 @@ class TermForm extends Component {
     this.setState({definition: event.target.value});
   };
 
+  _onSubmit() {
+    this.setState({isSubmitted: true});
+  };
+
   render() {
+    console.log(this.state.title);
+    console.log(this.state.definition);
     return (
       <form>
         Term Title<br/>
@@ -32,7 +39,7 @@ class TermForm extends Component {
         Term Definition<br/>
         <textarea rows={10} value={this.state.definition} onChange={this._onDefinitionChange}/>
         <br/><br/>
-        <input type="submit" value="Submit"/>
+        <input type="submit" value="Submit" onChange={this._onSubmit}/>
       </form>
     );
   }
