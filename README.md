@@ -11,17 +11,17 @@ This project is a React Tutorial for [Salalem](http://www.salalem.com) new emplo
 ## Usage
 After cloning the repository, install the node package
 ```
-    $npm install
+    $ npm install
 ```
  
 Then to create the build file run
 ```
-    $npm run build
+    $ npm run build
 ```
 
 Or if you want to run with watcher
 ```
-    $npm run dev
+    $ npm run dev
 ```
 
 
